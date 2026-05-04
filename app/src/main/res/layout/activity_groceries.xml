@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5">
+
+    <!-- 🔍 FLOATING SEARCH -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/searchCard"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_margin="16dp"
+        android:layout_marginTop="20dp"
+        app:cardCornerRadius="28dp"
+        app:cardElevation="10dp">
+
+        <EditText
+            android:id="@+id/etSearchGrocery"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Search groceries..."
+            android:paddingStart="20dp"
+            android:textSize="14sp"
+            android:background="@android:color/transparent"/>
+    </androidx.cardview.widget.CardView>
+
+    <!-- SCROLL CONTENT -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="90dp"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- 🔥 TOP CONTENT -->
+            <LinearLayout
+                android:id="@+id/topContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Banner -->
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/bannerSliderGrocery"
+                    android:layout_width="match_parent"
+                    android:layout_height="170dp"
+                    android:layout_marginHorizontal="16dp"/>
+
+                <!-- Grocery Categories -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerGroceryCategories"
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:layout_marginTop="16dp"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:nestedScrollingEnabled="false"/>
+
+                <!-- Grocery Offers -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Grocery Offers"
+                    android:layout_margin="16dp"
+                    android:textStyle="bold"
+                    android:textSize="16sp"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerGroceryOffers"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:nestedScrollingEnabled="false"/>
+
+                <!-- Best Rated Groceries -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Best Rated Groceries"
+                    android:layout_margin="16dp"
+                    android:textStyle="bold"
+                    android:textSize="16sp"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerBestGroceries"
+                    android:layout_width="match_parent"
+                    android:layout_height="280dp"
+                    android:nestedScrollingEnabled="false"/>
+
+            </LinearLayout>
+
+            <!-- Available Groceries -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Available Groceries"
+                android:layout_margin="16dp"
+                android:textStyle="bold"
+                android:textSize="16sp"/>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerGroceries"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:padding="12dp"
+                android:nestedScrollingEnabled="false"
+                android:layout_gravity="center_horizontal"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerBes"
+                android:layout_width="match_parent"
+                android:layout_height="230dp"
+                android:nestedScrollingEnabled="false"/>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Bottom App Bar -->
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bottomAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_gravity="bottom"
+        android:backgroundTint="@android:color/white"
+        app:fabAlignmentMode="center"
+        app:fabCradleMargin="6dp"
+        app:fabCradleRoundedCornerRadius="28dp"
+        app:fabCradleVerticalOffset="10dp">
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNav"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            app:menu="@menu/bottom_menu"
+            app:itemIconSize="26dp"
+            app:itemIconTint="@color/nav_selector"
+            app:itemTextColor="@color/nav_selector"/>
+
+    </com.google.android.material.bottomappbar.BottomAppBar>
+
+    <!-- Floating Cart Button -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabCart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:backgroundTint="#2ECC71"
+        android:src="@drawable/baseline_shopping_cart_24"
+        app:layout_anchor="@id/bottomAppBar"
+        app:layout_anchorGravity="fill"
+        app:tint="@android:color/white"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

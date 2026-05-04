@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F3F4F6">
+
+    <!-- HEADER -->
+    <!-- HEADER -->
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:background="#16A34A">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+
+            <!-- Profile Image -->
+            <ImageView
+                android:id="@+id/profileImage"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:src="@drawable/person"
+                android:background="@drawable/circle_bg"
+                android:scaleType="centerInside"
+                android:padding="6dp"/>
+
+            <!-- Username -->
+            <TextView
+                android:id="@+id/tvUserName"
+                android:layout_toEndOf="@id/profileImage"
+                android:layout_marginStart="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Guest User"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"/>
+
+            <!-- Email / Subtitle -->
+            <TextView
+                android:id="@+id/tvUserEmail"
+                android:layout_below="@id/tvUserName"
+                android:layout_toEndOf="@id/profileImage"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="4dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Login to enjoy full features"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"/>
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/btnLoginSignup"
+            android:layout_width="140dp"
+            android:layout_height="40dp"
+            android:text="Log in / Sign up"
+            android:layout_marginTop="15dp"
+            android:textColor="#16A34A"
+            android:backgroundTint="@android:color/white"/>
+    </LinearLayout>
+
+    <!-- CONTENT -->
+    <ScrollView
+        android:layout_below="@id/header"
+        android:layout_above="@id/bottomAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:text="General"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_marginBottom="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/card_bg"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/btnEditProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:text="Edit Profile"
+                    android:gravity="center_vertical"
+                    android:paddingStart="10dp"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#E5E7EB"/>
+
+                <TextView
+                    android:id="@+id/btnMyAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:text="My Address"
+                    android:gravity="center_vertical"
+                    android:paddingStart="10dp"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/btnLogout"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="Logout"
+                android:textStyle="bold"
+                android:textColor="#EF4444"
+                android:gravity="center_vertical"
+                android:paddingStart="16dp"
+                android:background="@drawable/card_bg"
+                android:layout_marginTop="15dp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <!-- Bottom Navigation -->
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bottomAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        android:backgroundTint="@android:color/white">
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNav"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            app:menu="@menu/bottom_menu"/>
+    </com.google.android.material.bottomappbar.BottomAppBar>
+
+    <!-- Floating Cart -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabCart"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="35dp"
+        android:src="@drawable/baseline_shopping_cart_24"
+        android:backgroundTint="#16A34A"
+        app:tint="@android:color/white"/>
+
+</RelativeLayout>

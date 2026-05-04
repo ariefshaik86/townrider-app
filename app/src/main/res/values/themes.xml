@@ -1,0 +1,19 @@
+<resources>
+
+    <style name="Theme.MyApplication" parent="Theme.Material3.Light.NoActionBar">
+
+        <item name="colorPrimary">#2ECC71</item>
+        <item name="colorPrimaryContainer">#E8F8F1</item>
+
+        <!-- Make system bars transparent -->
+
+
+
+
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:statusBarColor">@android:color/white</item>
+
+    </style>
+
+</resources>
